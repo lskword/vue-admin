@@ -16,12 +16,12 @@ export function removeToken() {
 }
 
 
-export function getUserInfo() {
-  return (JSON.parse(decodeURIComponent(sessionStorage.getItem(UserInfo))))
+export async function getUserInfo() {
+  return await (JSON.parse(decodeURIComponent(sessionStorage.getItem(UserInfo))))
 }
 
-export function setUserInfo(data) {
-  return sessionStorage.setItem(UserInfo, encodeURI(JSON.stringify(data)))
+export async function setUserInfo(data) {
+  return await sessionStorage.setItem(UserInfo, encodeURI(JSON.stringify(data)))
 }
 
 export function removeUserInfo() {
