@@ -2,8 +2,8 @@ import request from '@/utils/request'
 
 export function login(data) {
   return request({
-    url: '/api/sys/doLogin',
-    // url: '/vue-element-admin/user/login',
+    // url: '/api/sys/doLogin',
+    url: '/vue-element-admin/user/login',
     method: 'post',
     data
   })

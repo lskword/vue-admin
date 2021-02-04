@@ -29,19 +29,19 @@ module.exports = [
     url: '/vue-element-admin/user/login',
     type: 'post',
     response: config => {
-      const { username } = config.body
-      const token = tokens[username]
+      const { principal } = config.body
+      const token = tokens[principal]
 
       // mock error
       if (!token) {
         return {
-          code: 60204,
+          code: 401,
           message: 'Account and password are incorrect.'
         }
       }
 
       return {
-        code: 20000,
+        code: 200,
         data: token
       }
     }
@@ -64,7 +64,7 @@ module.exports = [
       }
 
       return {
-        code: 20000,
+        code: 200,
         data: info
       }
     }
@@ -76,7 +76,7 @@ module.exports = [
     type: 'post',
     response: _ => {
       return {
-        code: 20000,
+        code: 200,
         data: 'success'
       }
     }

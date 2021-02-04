@@ -49,24 +49,24 @@ const mutations = {
 const actions = {
   generateRoutes({ commit }, roles) {
     return new Promise(resolve => {
-      const accessedRoutes = []
-      roles.forEach(item => {
-        if (0 === item.childMenu.length) {
-          // try {
-          var s = asyncRoutes.filter(it => (it.name === item.code))
-          if (s.length > 0) {
-            accessedRoutes.push(s[0])
-          }
-          // } catch (e) {}
-        } else {
-          // 过滤子集本地路由
-          var childrenRouters = asyncRoutes.filter(o => o.name === item.code)[0];
-          if (!childrenRouters) { return }
-          // 取code name
-          childrenRouters.children = childrenRouters.children.filter(i => (-1 !== item.childMenu.map(i => i.code).indexOf(i.name)));
-          accessedRoutes.push(childrenRouters);
-        }
-      });
+      const accessedRoutes = asyncRoutes
+      // roles.forEach(item => {
+      //   if (0 === item.childMenu.length) {
+      //     // try {
+      //     var s = asyncRoutes.filter(it => (it.name === item.code))
+      //     if (s.length > 0) {
+      //       accessedRoutes.push(s[0])
+      //     }
+      //     // } catch (e) {}
+      //   } else {
+      //     // 过滤子集本地路由
+      //     var childrenRouters = asyncRoutes.filter(o => o.name === item.code)[0];
+      //     if (!childrenRouters) { return }
+      //     // 取code name
+      //     childrenRouters.children = childrenRouters.children.filter(i => (-1 !== item.childMenu.map(i => i.code).indexOf(i.name)));
+      //     accessedRoutes.push(childrenRouters);
+      //   }
+      // });
       commit('SET_ROUTES', accessedRoutes)
       resolve(accessedRoutes)
     })

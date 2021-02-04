@@ -24,6 +24,11 @@
           {{ scope.row.title }}
         </template>
       </el-table-column>
+      <el-table-column label="Content">
+        <template slot-scope="scope">
+          <p v-html="scope.row.content" />
+        </template>
+      </el-table-column>
       <el-table-column label="Author" width="110" align="center">
         <template slot-scope="scope">
           <el-tag>{{ scope.row.author }}</el-tag>
@@ -83,6 +88,7 @@ export default {
         const filterVal = ['id', 'title', 'author', 'pageviews', 'display_time']
         const list = this.list
         const data = this.formatJson(filterVal, list)
+        console.log(list, data)
         excel.export_json_to_excel({
           header: tHeader,
           data,
