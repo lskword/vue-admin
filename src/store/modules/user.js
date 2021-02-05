@@ -1,4 +1,4 @@
-import { login, logout, getInfo } from '@/api/user'
+import { login } from '@/api/user'
 import {getToken, setToken, removeToken, setUserInfo, getUserInfo} from '@/utils/auth'
 import router, { resetRouter } from '@/router'
 
@@ -64,8 +64,6 @@ const actions = {
       commit('SET_AVATAR', 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif')
       commit('SET_INTRODUCTION', name);
       resolve(userInfo)
-    }).catch((error) => {
-      reject(error)
     })
     // getInfo(state.token).then(response => {
     //   const { data } = response

@@ -126,6 +126,229 @@ export const constantRoutes = [
  */
 export const asyncRoutes = [
   {
+    path: '/contractmanagement',
+    component: Layout,
+    alwaysShow: true, // will always show the root menu
+    name: 'contractmanagement',
+    redirect: '/contractmanagement/index',
+    meta: {
+      title: '合同管理',
+      icon: 'lock',
+      roles: ['admin', 'editor'] // you can set roles in root nav
+    },
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/contractManagement/index'),
+        name: 'contractmanagementList',
+        meta: {
+          title: '合同列表',
+          roles: ['admin'] // or you can only set roles in sub nav
+        }
+      }
+    ]
+  },
+  {
+    path: '/trainingDocumentManagement',
+    component: Layout,
+    alwaysShow: true, // will always show the root menu
+    name: 'trainingDocumentManagement',
+    redirect: '/trainingDocumentManagement/index',
+    meta: {
+      title: '培训文件',
+      icon: 'lock',
+      roles: ['admin', 'editor'] // you can set roles in root nav
+    },
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/trainingDocumentManagement/index'),
+        name: 'trainingDocumentManagementList',
+        meta: {
+          title: '文件列表',
+          roles: ['admin'] // or you can only set roles in sub nav
+        }
+      }
+    ]
+  },
+  {
+    path: '/UserInfoManagement',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/userInfoManagement/index'),
+        name: 'UserInfoManagement',
+        meta: { title: '个人中心', icon: 'tab' }
+      }
+    ]
+  },
+  {
+    path: '/regionalOrder',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/regionalOrder/index'),
+        name: 'regionalOrder',
+        meta: { title: '大区订单', icon: 'tab' }
+      }
+    ]
+  },
+  {
+    path: '/carePackOrder',
+    component: Layout,
+    alwaysShow: true, // will always show the root menu
+    name: 'carePackOrder',
+    redirect: '/carePackOrder/index',
+    meta: {
+      title: '志愿者B',
+      icon: 'lock',
+      roles: ['admin', 'editor'] // you can set roles in root nav
+    },
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/volunteerB/carePackOrder/index'),
+        name: 'carePackOrder',
+        meta: {
+          title: '关怀包订单',
+          roles: ['admin'] // or you can only set roles in sub nav
+        }
+      },
+      {
+        path: 'regionalOrder',
+        component: () => import('@/views/volunteerB/regionalOrder/index'),
+        name: 'regionalOrder',
+        meta: { title: '分发管理' }
+      },
+      {
+        path: 'saleAndInventory',
+        component: () => import('@/views/volunteerB/saleAndInventory/index'),
+        name: 'saleAndInventory',
+        meta: {
+          title: '进销存管理',
+          roles: ['admin'] // or you can only set roles in sub nav
+        }
+      },
+      {
+        path: 'meberMang',
+        component: () => import('@/views/volunteerB/meberMang/index'),
+        name: 'meberMang',
+        meta: {
+          title: '患者管理',
+          roles: ['admin'] // or you can only set roles in sub nav
+        }
+      }
+    ]
+  },
+  {
+    path: '/carePackOrderA',
+    component: Layout,
+    alwaysShow: true, // will always show the root menu
+    name: 'carePackOrderA',
+    redirect: '/carePackOrderA/index',
+    meta: {
+      title: '志愿者A',
+      icon: 'lock',
+      roles: ['admin', 'editor'] // you can set roles in root nav
+    },
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/volunteerB/carePackOrder/index'),
+        name: 'carePackOrder',
+        meta: {
+          title: '大区订单管理',
+          roles: ['admin'] // or you can only set roles in sub nav
+        }
+      },
+      {
+        path: 'regionalOrder',
+        component: () => import('@/views/volunteerB/regionalOrder/index'),
+        name: 'regionalOrder',
+        meta: { title: '分发订单' }
+      },
+      {
+        path: 'saleAndInventory',
+        component: () => import('@/views/volunteerB/saleAndInventory/index'),
+        name: 'saleAndInventory',
+        meta: {
+          title: '商品明细',
+          roles: ['admin'] // or you can only set roles in sub nav
+        }
+      },
+      {
+        path: 'meberMang',
+        component: () => import('@/views/volunteerB/meberMang/index'),
+        name: 'meberMang',
+        meta: {
+          title: '患者管理',
+          roles: ['admin'] // or you can only set roles in sub nav
+        }
+      }
+    ]
+  },
+  {
+    path: '/shopManagement',
+    component: Layout,
+    alwaysShow: true, // will always show the root menu
+    name: 'shopManagement',
+    redirect: '/shopManagement/index',
+    meta: {
+      title: '商品管理',
+      icon: 'lock',
+      roles: ['admin', 'editor'] // you can set roles in root nav
+    },
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/shopManagement/index'),
+        name: 'shopManagement',
+        meta: {
+          title: '商品列表',
+          roles: ['admin'] // or you can only set roles in sub nav
+        }
+      },
+      {
+        path: 'CarePack',
+        component: () => import('@/views/shopManagement/carePack'),
+        name: 'CarePack',
+        meta: {
+          title: '关怀包列表',
+          roles: ['admin'] // or you can only set roles in sub nav
+        }
+      }
+    ]
+  },
+
+  {
+    path: '/distributionAddressManagement',
+    component: Layout,
+    alwaysShow: true, // will always show the root menu
+    name: 'distributionAddressManagement',
+    redirect: '/distributionAddressManagement/index',
+    meta: {
+      title: '分发地址管理',
+      icon: 'lock',
+      roles: ['admin', 'editor'] // you can set roles in root nav
+    },
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/distributionAddressManagement/index'),
+        name: 'distributionAddressManagement',
+        meta: {
+          title: '分发地址列表',
+          roles: ['admin'] // or you can only set roles in sub nav
+        }
+      }
+    ]
+  },
+
+
+
+  {
     path: '/permission',
     component: Layout,
     redirect: '/permission/page',

@@ -104,6 +104,7 @@ import Sticky from '@/components/Sticky'
 export default {
   name: 'StickyDemo',
   components: { Sticky },
+
   data() {
     return {
       time: '',

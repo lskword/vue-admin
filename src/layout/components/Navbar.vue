@@ -12,7 +12,7 @@
 
         <screenfull id="screenfull" class="right-menu-item hover-effect" />
 
-        <el-tooltip content="Global Size" effect="dark" placement="bottom">
+        <el-tooltip content="全局尺寸" effect="dark" placement="bottom">
           <size-select id="size-select" class="right-menu-item hover-effect" />
         </el-tooltip>
 
@@ -30,12 +30,6 @@
           <router-link to="/">
             <el-dropdown-item>返回首页</el-dropdown-item>
           </router-link>
-<!--          <a target="_blank" href="https://github.com/PanJiaChen/vue-element-admin/">-->
-<!--            <el-dropdown-item>Github</el-dropdown-item>-->
-<!--          </a>-->
-<!--          <a target="_blank" href="https://panjiachen.github.io/vue-element-admin-site/#/">-->
-<!--            <el-dropdown-item>Docs</el-dropdown-item>-->
-<!--          </a>-->
           <el-dropdown-item divided @click.native="logout">
             <span style="display:block;">退出登录</span>
           </el-dropdown-item>
